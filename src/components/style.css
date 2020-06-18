@@ -1,0 +1,46 @@
+.nav{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    background: #e0e0e0;
+    padding: 10px;
+    justify-content: space-between;
+}
+.nav > div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+span.name {
+    font-size: 1rem;
+    font-weight: 600;
+}
+input.w3-input {
+    border: none;
+    border-bottom: 1px solid #b9a8a8;
+    background: #e0e0e0;
+}
+input.w3-input:focus {
+    outline: none;
+}
+button.styleDown {
+    margin: 5px 10px;
+    background: #33ccbd;
+    border-color: #33ccbd;
+}
+.ant-select.ant-select-single.ant-select-show-arrow.ant-select-show-search {
+    margin: 5px 10px;
+}
+button.styleFilter{
+    margin: 5px 10px;
+    background: #c3cc33;
+    border-color: #bbbd27;
+}
+button.styleCop{
+    margin: 5px 10px;
+    background: #61cc36;
+    border-color: #61cc36;
+}
+ul.ant-pagination.ant-table-pagination.ant-table-pagination-right {
+    margin: 5px 10px;
+}
