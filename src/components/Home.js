@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import axios from 'axios';
 import { Table } from 'antd';
 import "antd/dist/antd.css";
 import { DownloadOutlined ,CheckOutlined,SnippetsOutlined,FilterOutlined } from '@ant-design/icons';
@@ -7,6 +8,7 @@ import './style.css';
 import { Select } from 'antd';
 import { Checkbox } from 'antd';
 const { Option } = Select;
+
 export default function Home() {
     const dataSource = [
         {
@@ -75,13 +77,32 @@ export default function Home() {
             key: 'Telesafe',
         },
     ];
+    const getData = ()=>{
+        let data = JSON.stringify({"Md5Password":"811137414f6975fd9b48dd36b73f2fb1","Verify":null,"Password":"tin123","OTP":null,"Captcha":"","Username":"Phuongne111"});
+        let options = {
+            method:"post",
+            url:"http://khanhdang.xyz/AppG88/login.php",
+            headers:{
+                'Content-Type': 'application/json'
+            },
+            data :data
+        }
+        axios(options)
+        .then(function (response) {
+        console.log(JSON.stringify(response.data));
+        })
+        .catch(function (error) {
+        console.log(error);
+        });
+
+    }
     return (
         <>
             <div className="nav">
                 <div>
                     <div>
                         <input size={30} className="w3-input" type="text" placeholder="Nhập" />
-                        <Button type="primary" className="styleDown" shape="circle" icon={<DownloadOutlined />} size="large" />
+                        <Button type="primary" className="styleDown" shape="circle" icon={<DownloadOutlined />} size="large" onClick={getData} />
                     </div>
                     <div>
                         <span className="name">Cổng game</span>
